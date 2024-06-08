@@ -49,21 +49,32 @@
     </nav>
     <section style="margin-top: 80px;">
         <div class="container text-center">
-            <h1 class="text-center" style="margin-bottom: 30px;">Favorite Posts</h1>
+            <h1 class="text-center" style="margin-bottom: 30px;">Twitch</h1>
             <div class="row">
-                <div class="col-12 col-md-6">
-                    <p style="margin-top: 28px;margin-bottom: 32px;">One of my favorite books 📚 | Modern Cartooning by Christopher Hart</p><!-- Add a placeholder for the Twitch embed -->
-<div id="twitch-embed"></div>
+                <div class="col-12 col-md-12">
+                    <p style="margin-top: 28px;margin-bottom: 32px;">Streaming Video</p> <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
 
-<!-- Load the Twitch embed script -->
-<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-<!-- Create a Twitch.Player object. This will render within the placeholder div -->
-<script type="text/javascript">
-  new Twitch.Player("twitch-embed", {
-    video: "2162642761"
-  });
-</script></div>
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
+    <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        channel: "techgameshorizon",
+        layout: "video",
+        autoplay: false,
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["https://e-karamolegkos.github.io/", "othersite.example.com"]
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
+    </script></div>
             </div>
         </div>
     </section>
