@@ -74,8 +74,9 @@
         var player = embed.getPlayer();
         player.play();
       });
-    </script><!-- Add a placeholder for the Twitch embed -->
-<div id="twitch-embed"></div>
+    </script>
+                    <p style="margin-top: 28px;margin-bottom: 32px;">Video Collections</p><!-- Add a placeholder for the Twitch embed -->
+<div style="padding-bottom: 32px;" id="twitch-embed"></div>
 
 <!-- Load the Twitch embed script -->
 <script src="https://player.twitch.tv/js/embed/v1.js"></script>
@@ -84,6 +85,7 @@
 <script type="text/javascript">
   new Twitch.Player("twitch-embed", {
     collection: "J4fVFj0y1hevfA",
+    autoplay: false,
     video: "videoId"
   });
 </script></div>
