@@ -75,20 +75,29 @@
         player.play();
       });
     </script>
-                    <p style="margin-top: 28px;margin-bottom: 32px;">Video Collections</p><!-- Add a placeholder for the Twitch embed -->
-<div style="padding-bottom: 32px;" id="twitch-embed"></div>
+                    <p style="margin-top: 28px;margin-bottom: 32px;">Video Collections</p>    <!-- Add a placeholder for the Twitch embed -->
+    <div style="padding-bottom: 32px;" id="twitch-embed"></div>
 
-<!-- Load the Twitch embed script -->
-<script src="https://player.twitch.tv/js/embed/v1.js"></script>
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
-<!-- Create a Twitch.Player object. This will render within the placeholder div -->
-<script type="text/javascript">
-  new Twitch.Player("twitch-embed", {
-    collection: "J4fVFj0y1hevfA",
-    autoplay: false,
-    video: "videoId"
-  });
-</script></div>
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
+    <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        width: 854,
+        height: 480,
+        collection: "J4fVFj0y1hevfA",
+        layout: "video",
+        autoplay: false,
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["e-karamolegkos.github.io"]
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
+    </script></div>
             </div>
         </div>
     </section>
