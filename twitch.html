@@ -61,8 +61,6 @@
     <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
     <script type="text/javascript">
       var embed = new Twitch.Embed("twitch-embed", {
-        width: 854,
-        height: 480,
         channel: "techgameshorizon",
         layout: "video",
         autoplay: false,
@@ -74,7 +72,9 @@
         var player = embed.getPlayer();
         player.play();
       });
-    </script></div>
+    </script>
+                    <div class="clear"></div>
+                </div>
             </div>
         </div>
     </section>

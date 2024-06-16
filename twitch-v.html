@@ -53,16 +53,14 @@
             <h1 class="text-center" style="margin-bottom: 30px;">Twitch Videos Collection</h1>
             <div class="row">
                 <div class="col">    <!-- Add a placeholder for the Twitch embed -->
-    <div style="padding-bottom: 32px;" id="twitch-embed-2"></div>
+    <div id="twitch-embed"></div>
 
     <!-- Load the Twitch embed script -->
     <script src="https://embed.twitch.tv/embed/v1.js"></script>
 
     <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
     <script type="text/javascript">
-      var embed = new Twitch.Embed("twitch-embed-2", {
-        width: 854,
-        height: 480,
+      var embed = new Twitch.Embed("twitch-embed", {
         collection: "J4fVFj0y1hevfA",
         layout: "video",
         autoplay: false,
@@ -74,7 +72,9 @@
         var player = embed.getPlayer();
         player.play();
       });
-    </script></div>
+    </script>
+                    <div class="clear"></div>
+                </div>
             </div>
         </div>
     </section>
