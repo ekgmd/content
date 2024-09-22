@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Evangelos Karamolegkos | Multimedia Designer</title>
-    <meta name="description" content="Hi, I am a Multimedia Designer from Athens, Greece. In my website you will see my portfolio and my blog.">
-    <meta name="keywords" content="multimedia design, multimedia, designer. graphic design, web design">
+    <title>EKGMD | Another Twitch Channel for Gaming</title>
     <meta name="author" content="Evangelos Karamolegkos">
+    <meta name="keywords" content="retro gaming, video games, game streaming, twitch">
+    <meta name="description" content="Hi this is my Twitch channel EKGMD, from this channel i will steaming video games gameplay.">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/img/16x16.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/img/32x32.png">
     <link rel="icon" type="image/png" sizes="180x180" href="assets/img/180x180.png">
@@ -47,13 +47,31 @@
     </nav>
     <section style="margin-top: 80px;">
         <div class="container text-center">
-            <h1 class="text-center" style="margin-bottom: 30px;">Favorite Posts</h1>
+            <h1 class="text-center" style="margin-bottom: 30px;">Twitch Online Streaming<br></h1>
+            <p>Video Games Gameplay</p>
             <div class="row">
-                <div class="col-12 col-md-6"><img class="img-fluid" src="assets/img/20240421_094438.jpg">
-                    <p style="margin-top: 28px;margin-bottom: 32px;">One of my favorite books 📚 | Modern Cartooning by Christopher Hart</p>
-                </div>
-                <div class="col-12 col-md-6"><img class="img-fluid" src="assets/img/20220516_143103.jpg">
-                    <p style="margin-top: 28px;margin-bottom: 32px;">Who remembers PANG ❤️🕹 | Amiga 500 Mini</p>
+                <div class="col"> <!-- Add a placeholder for the Twitch embed -->
+    <div id="twitch-embed"></div>
+
+    <!-- Load the Twitch embed script -->
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+
+    <!-- Create a Twitch.Embed object that will render within the "twitch-embed" element. -->
+    <script type="text/javascript">
+      var embed = new Twitch.Embed("twitch-embed", {
+        channel: "ekgmd",
+        layout: "video",
+        autoplay: false,
+        // Only needed if this page is going to be embedded on other websites
+        parent: ["e-karamolegkos.github.io"]
+      });
+
+      embed.addEventListener(Twitch.Embed.VIDEO_READY, () => {
+        var player = embed.getPlayer();
+        player.play();
+      });
+    </script>
+                    <div class="clear"></div>
                 </div>
             </div>
         </div>
